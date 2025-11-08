@@ -23,9 +23,6 @@ class AppColors {
   static const Color surfaceBlack2 = Color(0xB3101010);
   static const Color surfaceBlack3 = Color(0x80101010);
 
-  // Status colors
-  static const Color positive = Color(0xFFE5BDBB);
-  static const Color negative = Color(0xFFC22743);
 
   // Border shades
   static const Color border1 = Color(0x14FFFFFF); // 8%
