@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'dart:math' as math;
 
-/// Matches 8club's Figma wavy progress indicator design
 class ProgressIndicatorWidget extends StatelessWidget {
   final int currentStep;
   final int totalSteps;
@@ -19,7 +18,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
 
     return SizedBox(
       width: double.infinity,
-      height: 20, // control the vertical spacing area for the wave
+      height: 20, 
       child: CustomPaint(
         painter: _WavyProgressPainter(
           progress: progress,
@@ -44,23 +43,23 @@ class _WavyProgressPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final amplitude = 4.0; // wave height
-    final wavelength = 32.0; // distance between wave crests
+    final amplitude = 4.0; 
+    final wavelength = 32.0; 
     final centerY = size.height / 2;
 
-    // Configure paints
+    
     final basePaint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round
       ..isAntiAlias = true;
 
-    // Draw full inactive wave
+    
     final inactivePath = _generateWavePath(size.width, centerY, amplitude, wavelength);
     basePaint.color = inactiveColor;
     canvas.drawPath(inactivePath, basePaint);
 
-    // Draw clipped active wave
+    
     if (progress > 0) {
       final activeWidth = size.width * progress;
       final clipRect = Rect.fromLTWH(0, 0, activeWidth, size.height);

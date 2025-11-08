@@ -166,7 +166,7 @@ class _ExperienceSelectionScreenState
                       ),
                       const SizedBox(height: 24),
 
-                      // --- Horizontal Animated Cards ---
+                    
                       SizedBox(
                         height: 140,
                         child: AnimatedBuilder(
@@ -210,7 +210,7 @@ class _ExperienceSelectionScreenState
                       ),
                       const SizedBox(height: 24),
 
-                      // --- Description Field ---
+                      
                       Container(
                         decoration: BoxDecoration(
                           color: AppColors.base2,
@@ -244,7 +244,7 @@ class _ExperienceSelectionScreenState
                       ),
                       const SizedBox(height: 20),
 
-                      // --- Next Button ---
+                      
                       SizedBox(
                         width: double.infinity,
                         height: 54,

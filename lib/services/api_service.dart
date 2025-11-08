@@ -13,8 +13,6 @@ class ApiService {
       final data = resp.data['data']['experiences'] as List<dynamic>;
       return data.map((e) => Experience.fromJson(e as Map<String, dynamic>)).toList();
     } catch (e) {
-      // For assignment local dev, return an empty list or mock
-      // rethrow if you want to know the error during actual execution
       rethrow;
     }
   }

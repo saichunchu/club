@@ -23,25 +23,25 @@ class _DataSyncSuccessScreenState extends State<DataSyncSuccessScreen>
   void initState() {
     super.initState();
 
-    // Main animation controller
+    
     _mainController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 1800),
     );
 
-    // Subtle glow animation controller (infinite)
+    
     _glowController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     )..repeat(reverse: true);
 
-    // Checkmark scale animation
+    
     _scaleAnimation = CurvedAnimation(
       parent: _mainController,
       curve: const Interval(0.0, 0.4, curve: Curves.easeOutBack),
     );
 
-    // Text fade & slide animation
+    
     _fadeTextAnimation = CurvedAnimation(
       parent: _mainController,
       curve: const Interval(0.1, 0.9, curve: Curves.easeIn),
@@ -56,7 +56,7 @@ class _DataSyncSuccessScreenState extends State<DataSyncSuccessScreen>
       ),
     );
 
-    // Button fade & slide animation
+    
     _fadeButtonAnimation = CurvedAnimation(
       parent: _mainController,
       curve: const Interval(0.7, 1.0, curve: Curves.easeIn),
@@ -71,7 +71,7 @@ class _DataSyncSuccessScreenState extends State<DataSyncSuccessScreen>
       ),
     );
 
-    // Start main animation
+    
     _mainController.forward();
   }
 
@@ -89,7 +89,7 @@ class _DataSyncSuccessScreenState extends State<DataSyncSuccessScreen>
       body: SafeArea(
         child: Stack(
           children: [
-            // Faint patterned background
+            
             Container(
               decoration: BoxDecoration(
                 color: AppColors.base1,

@@ -124,9 +124,7 @@ class AppTextStyles {
   );
 }
 
-/// ===========================
-/// 🌙 ThemeData
-/// ===========================
+
 class AppTheme {
   static ThemeData darkTheme = ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppColors.base1,

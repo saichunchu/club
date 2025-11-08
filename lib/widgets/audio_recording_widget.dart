@@ -54,9 +54,7 @@ class AudioRecorderWidgetState extends State<AudioRecorderWidget>
       curve: Curves.easeInOut,
     );
 
-    // Listen to player state changes once
     _playerSub = _playerController.onPlayerStateChanged.listen((state) {
-      // Update isPlaying when playback stops/completes
       if (mounted) {
         if (state == PlayerState.playing) {
           setState(() => _isPlaying = true);
@@ -130,7 +128,7 @@ class AudioRecorderWidgetState extends State<AudioRecorderWidget>
     if (path != null) {
       widget.onRecorded(path);
       _recordedPath = path;
-      // prepare player with recorded file (so AudioFileWaveforms can use it)
+      
       await _playerController.preparePlayer(path: path);
     }
 
@@ -165,15 +163,12 @@ class AudioRecorderWidgetState extends State<AudioRecorderWidget>
     if (_isPlaying) {
       // pause playback
       await _playerController.pausePlayer();
-      // _playerSub listener will set _isPlaying=false
+      
     } else {
-      // start playback (no finishMode param)
-      // If the player wasn't prepared for some reason, prepare again
       if (!_playerController.playerState.isInitialised) {
         await _playerController.preparePlayer(path: _recordedPath!);
       }
       await _playerController.startPlayer();
-      // _playerSub listener will set _isPlaying=true
     }
   }
 
